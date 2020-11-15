@@ -16,12 +16,12 @@
     <!--            android:layout_width="match_parent"-->
     <!--            android:layout_height="300dp" />-->
 
-    <!--    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView-->
-    <!--        android:id="@+id/youtube_player_view"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="300dp"-->
-    <!--        app:showFullScreenButton="false"-->
-    <!--        app:showYouTubeButton="false" />-->
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:id="@+id/youtube_player_view"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:showFullScreenButton="false"
+            app:showYouTubeButton="false" />
 
     <!--    <com.google.android.youtube.player.YouTubePlayerView-->
     <!--        android:id="@+id/offical_youtube_player_lib_view"-->
@@ -42,10 +42,10 @@
     <!--        app:showTitle="true"-->
     <!--        app:topicColor="#FFFF00" />-->
 
-    <fragment
+    <!--<fragment
         android:id="@+id/fragment_youtube_player"
         android:name="com.google.android.youtube.player.YouTubePlayerSupportFragment"
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="300dp" />-->
 
 </FrameLayout>

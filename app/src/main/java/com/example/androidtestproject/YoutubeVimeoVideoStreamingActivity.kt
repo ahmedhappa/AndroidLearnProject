@@ -1,12 +1,13 @@
 package com.example.androidtestproject
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.exoplayer2.SimpleExoPlayer
-import com.google.android.youtube.player.YouTubeInitializationResult
-import com.google.android.youtube.player.YouTubePlayer
-import com.google.android.youtube.player.YouTubePlayerSupportFragment
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions
+import kotlinx.android.synthetic.main.activity_youtube_vimeo_video_streaming.*
 
 
 class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
@@ -42,8 +43,8 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
 
         //------------using youtube github custom library (https://github.com/PierfrancescoSoffritti/android-youtube-player)-------------------
         //need AppCompatActivity doesn't work with YoutubeBaseActivity
-//        lifecycle.addObserver(youtube_player_view)
-        /*custome web frame for youtube web view not the library ui
+//        custome web frame for youtube web view not the library ui
+                lifecycle.addObserver(youtube_player_view)
         val iFramePlayerOptions = IFramePlayerOptions.Builder()
             .controls(0)
             .rel(1)
@@ -51,7 +52,7 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
             .ccLoadPolicy(0)
             .build()
         youtube_player_view.enableAutomaticInitialization = false
-        youtube_player_view.initialize(youtubeListener,true,iFramePlayerOptions) */
+        youtube_player_view.initialize(youtubeListener,true,iFramePlayerOptions)
 
 //        youtube_player_view.addYouTubePlayerListener(youtubeListener)
 
@@ -91,7 +92,7 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
              })*/
 
         //------------using youtube with fragment-------------------
-        val youtubePLayerFragment1: YouTubePlayerSupportFragment =
+      /*  val youtubePLayerFragment1: YouTubePlayerSupportFragment =
             supportFragmentManager.findFragmentById(R.id.fragment_youtube_player) as YouTubePlayerSupportFragment
         //this code works even if this initialize method report error (Something related to the new androidx library and Google hasn't refactored youtube api library to androidx)
         youtubePLayerFragment1.initialize(YOUTUBE_API_KEY,
@@ -111,12 +112,12 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
                 ) {
                 }
 
-            })
+            })*/
 
     }
 
     //----------------- for youtube github custom library
-    /*private val youtubeListener = object : AbstractYouTubePlayerListener() {
+    private val youtubeListener = object : AbstractYouTubePlayerListener() {
         override fun onReady(youTubePlayer: YouTubePlayer) {
             super.onReady(youTubePlayer)
             youTubePlayer.cueVideo("50VNCymT-Cs", 0f)
@@ -143,11 +144,12 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
             state: PlayerConstants.PlayerState
         ) {
             super.onStateChange(youTubePlayer, state)
-            if (state == PlayerConstants.PlayerState.ENDED){
+            if (state == PlayerConstants.PlayerState.ENDED) {
                 youTubePlayer.pause()
                 youTubePlayer.seekTo(0f)
             }
-        }*/
+        }
+    }
 
     //----------------- for vimeo streaming with exo player
     /* private fun initializePlayer(videoUrl: String) {
