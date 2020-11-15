@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -9,12 +11,13 @@ android {
 
     defaultConfig {
         applicationId "com.example.androidtestproject"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -39,7 +42,24 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    testImplementation 'junit:junit:4.+'
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.0"
+    implementation 'androidx.fragment:fragment-ktx:1.2.5'
+
+    implementation 'com.google.android.exoplayer:exoplayer:2.11.8'
+    // custom youtube library
+    implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
+    // offical youtube library
+    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    //custom vimeo library
+    implementation 'com.ct7ct7ct7.androidvimeoplayer:library:1.2.2'
+
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
