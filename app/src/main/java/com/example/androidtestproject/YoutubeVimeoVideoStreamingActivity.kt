@@ -1,13 +1,24 @@
 package com.example.androidtestproject
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.exoplayer2.SimpleExoPlayer
+import com.google.android.exoplayer2.source.MediaSource
+import com.google.android.exoplayer2.source.ProgressiveMediaSource
+import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
+import com.google.gson.annotations.SerializedName
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions
 import kotlinx.android.synthetic.main.activity_youtube_vimeo_video_streaming.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.GET
 
 
 class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
@@ -27,7 +38,7 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
         vimeo_custom_library.initialize(true, 49462103)
 */
         //------------using exo player to view vimeo object-------------------
-        /* val retrofit = Retrofit.Builder()
+         val retrofit = Retrofit.Builder()
              .baseUrl("https://player.vimeo.com/video/")
              .addConverterFactory(GsonConverterFactory.create())
              .build()
@@ -35,7 +46,7 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
          CoroutineScope(Dispatchers.Main).launch {
              val result = vimeoVideoApi.getVideoConfig()
              initializePlayer(result.request.files.progressive[0].url)
-         }*/
+         }
 
         //------------playing vemio video using a webview-------------------
 //        webView1.settings.javaScriptEnabled = true
@@ -44,7 +55,7 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
         //------------using youtube github custom library (https://github.com/PierfrancescoSoffritti/android-youtube-player)-------------------
         //need AppCompatActivity doesn't work with YoutubeBaseActivity
 //        custome web frame for youtube web view not the library ui
-                lifecycle.addObserver(youtube_player_view)
+                /*lifecycle.addObserver(youtube_player_view)
         val iFramePlayerOptions = IFramePlayerOptions.Builder()
             .controls(0)
             .rel(1)
@@ -53,7 +64,7 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
             .build()
         youtube_player_view.enableAutomaticInitialization = false
         youtube_player_view.initialize(youtubeListener,true,iFramePlayerOptions)
-
+*/
 //        youtube_player_view.addYouTubePlayerListener(youtubeListener)
 
         //------------using youtube offical library for android-------------------
@@ -117,7 +128,7 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
     }
 
     //----------------- for youtube github custom library
-    private val youtubeListener = object : AbstractYouTubePlayerListener() {
+   /* private val youtubeListener = object : AbstractYouTubePlayerListener() {
         override fun onReady(youTubePlayer: YouTubePlayer) {
             super.onReady(youTubePlayer)
             youTubePlayer.cueVideo("50VNCymT-Cs", 0f)
@@ -150,9 +161,9 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
             }
         }
     }
-
+*/
     //----------------- for vimeo streaming with exo player
-    /* private fun initializePlayer(videoUrl: String) {
+     private fun initializePlayer(videoUrl: String) {
          videoPlayer = SimpleExoPlayer.Builder(this).build()
          pv_exoplayer.player = videoPlayer
          buildMediaSource(videoUrl)?.let {
@@ -228,6 +239,6 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
              }
          }
  
-     }*/
+     }
 }
 

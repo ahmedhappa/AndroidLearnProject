@@ -50,7 +50,8 @@ dependencies {
     // custom youtube library
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:10.0.5'
     // offical youtube library
-    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+//    implementation files('libs/YouTubeAndroidPlayerApi.jar')
+    implementation 'com.google.apis:google-api-services-youtube:v3-rev20200618-1.30.9'
     //custom vimeo library
     implementation 'com.ct7ct7ct7.androidvimeoplayer:library:1.2.2'
 

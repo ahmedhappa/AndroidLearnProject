@@ -6,22 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".YoutubeVimeoVideoStreamingActivity">
 
-    <!--        <com.google.android.exoplayer2.ui.PlayerView-->
-    <!--            android:id="@+id/pv_exoplayer"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="300dp"/>-->
+    
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/pv_exoplayer"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:show_buffering="always"/>
 
-    <!--        <WebView-->
-    <!--            android:id="@+id/webView1"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="300dp" />-->
+    <!--            <WebView-->
+    <!--                android:id="@+id/webView1"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="300dp" />-->
 
-        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
-            android:id="@+id/youtube_player_view"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            app:showFullScreenButton="false"
-            app:showYouTubeButton="false" />
+    <!--        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView-->
+    <!--            android:id="@+id/youtube_player_view"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="300dp"-->
+    <!--            app:showFullScreenButton="false"-->
+    <!--            app:showYouTubeButton="false" />-->
 
     <!--    <com.google.android.youtube.player.YouTubePlayerView-->
     <!--        android:id="@+id/offical_youtube_player_lib_view"-->
