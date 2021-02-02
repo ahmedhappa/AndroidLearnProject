@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/motion_scene_collapsing_toolbar_with_subtitle"
+    tools:context=".CollapsingToolbarWithSubtitleActivity">
+
+    <ImageView
+        android:id="@+id/toolbar_image_expanded"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="?attr/colorPrimary"
+        android:contentDescription="@null"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img1" />
+    <!--    transformPivotX and transformPivotY is to move text horizontal
+    or vertical in it's own boundaries when the text is smaller than it's boundaries-->
+    <TextView
+        android:id="@+id/toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This is title"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:transformPivotX="0sp"
+        android:transformPivotY="25sp" />
+
+    <TextView
+        android:id="@+id/toolbar_sub_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:text="This is sub title"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:transformPivotX="6sp"
+        android:transformPivotY="0sp" />
+
+    <!--    you can put any thing here ex (RecyclerView or Image or .... any thing).-->
+    <TextView
+        android:id="@+id/tv_remaining_body"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="remaining body what ever it is"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_image_expanded" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

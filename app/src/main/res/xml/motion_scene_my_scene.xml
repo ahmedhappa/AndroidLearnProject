@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/iv_refresh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Constraint
+            android:id="@id/iv_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/iv_refresh"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Constraint
+            android:id="@+id/iv_star"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    <!--        Can apply one or more Transition-->
+    <!--    Transition based on click events-->
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@+id/start"
+        app:duration="1000">
+
+        <KeyFrameSet>
+            <!--KeyPosition to modify the path that a view takes between the start and end.-->
+            <!--framePosition is a number between 0 and 100. It defines when in the animation this KeyPosition-->
+            <!--percentX | percentY is how much to modify the path at framePosition-->
+            <KeyPosition
+                app:framePosition="50"
+                app:keyPositionType="parentRelative"
+                app:motionTarget="@id/iv_refresh"
+                app:percentX="0.8" />
+
+            <KeyPosition
+                app:framePosition="25"
+                app:keyPositionType="parentRelative"
+                app:motionTarget="@id/iv_refresh"
+                app:percentX="0.1" />
+            <!-- KeyAttributes to rotate and resize view -->
+            <KeyAttribute
+                android:rotation="-360"
+                android:scaleX="2.0"
+                android:scaleY="2.0"
+                app:framePosition="50"
+                app:motionTarget="@id/iv_refresh" />
+        </KeyFrameSet>
+        <OnClick
+            app:clickAction="toggle"
+            app:targetId="@+id/iv_refresh" />
+    </Transition>
+
+    <!--    Transition based on drag events-->
+    <Transition
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@+id/start">
+        <!--        touchAnchorId is the tracked view that moves in response to Swipe.-->
+
+        <!-- OnSwipe listens for swipes on the MotionLayout and not the view specified in touchAnchorId.
+         This means the user may swipe outside of the specified view to run the animation.-->
+        <OnSwipe app:touchAnchorId="@id/iv_refresh" />
+    </Transition>
+</MotionScene>

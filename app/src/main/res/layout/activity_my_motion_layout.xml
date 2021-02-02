@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?><!-- To help develop complex animations with MotionLayout,
+    you can draw the animation path of every view.
+    motion:motionDebug="SHOW_PATH"
+    -Circles represent the start or end position of one view.
+    -Lines represent the path of one view.
+    -Diamonds represent a KeyPosition that modifies the path.
+    -->
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/motion_scene_my_scene"
+    app:motionDebug="SHOW_ALL"
+    tools:context=".MyMotionLayoutActivity">
+    <!--    All Views Must Have Id-->
+    <!-- Any constraints specified in a ConstraintSet(XML File) will override the constraints specified in the layout file.
+     If you define constraints in both the layout and the MotionScene, only the constraints in the MotionScene
+     are applied.-->
+    <!--    icons are not constrained in the layout because they will be animated in the motion scene.-->
+    <ImageView
+        android:id="@+id/iv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_refresh" />
+
+    <ImageView
+        android:id="@+id/iv_star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_star" />
+    <!--    Views that are not animated by a MotionLayout animation should specify their constraints in the layout XML-->
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Animation"
+        android:textColor="#FF0000"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
