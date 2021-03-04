@@ -1,4 +1,4 @@
-package com.example.androidtestproject
+package com.example.androidtestproject.motionlayout
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

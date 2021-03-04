@@ -12,7 +12,7 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/motion_scene_my_scene"
     app:motionDebug="SHOW_ALL"
-    tools:context=".MyMotionLayoutActivity">
+    tools:context=".motionlayout.MyMotionLayoutActivity">
     <!--    All Views Must Have Id-->
     <!-- Any constraints specified in a ConstraintSet(XML File) will override the constraints specified in the layout file.
      If you define constraints in both the layout and the MotionScene, only the constraints in the MotionScene

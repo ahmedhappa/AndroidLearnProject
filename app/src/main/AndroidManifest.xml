@@ -11,14 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTestProject">
-        <activity android:name=".CollapsingToolbarWithSubtitleActivity">
+        <activity android:name=".Paging3LibraryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MyMotionLayoutActivity"/>
+        <activity android:name=".MyJunitTest" />
+        <activity android:name=".ChartActivity">
+
+        </activity>
+        <activity android:name=".FirebaseOTPAuthenticationActivity" />
+        <activity android:name=".motionlayout.MotionLayoutExampleActivity" />
+        <activity android:name=".CollapsingToolbarWithSubtitleActivity" />
+        <activity android:name=".motionlayout.MyMotionLayoutActivity" />
         <activity android:name=".RecyclerWithListAdapterActivity" />
         <activity android:name=".MyRetrofit" />
         <activity android:name=".YoutubeVimeoVideoStreamingActivity" />
