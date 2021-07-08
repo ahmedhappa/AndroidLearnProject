@@ -39,7 +39,7 @@ class Paging3LibraryActivity : AppCompatActivity() {
         val movieRecyclerView: RecyclerView = findViewById(R.id.rv_paging3)
 
         //this is the simple use of paging3 library
-        //this observe works only one time
+        //this observe works only one time on creation or on adapter refresh
         val movieAdapter = MovieAdapter()
         movieRecyclerView.adapter = movieAdapter
             //to add a loader to list in the footer and header (optional)
@@ -54,7 +54,7 @@ class Paging3LibraryActivity : AppCompatActivity() {
         movieAdapter.addLoadStateListener { loadState ->
             when {
                 loadState.refresh is LoadState.Loading -> {
-                    // show progress par or do some refresh ui ##(works only one time when the list is empty)
+                    // show progress par or do some refresh ui ##(works only one time when the list is empty or when you refresh adapter)
                     Log.i("Paging", "Refreshing")
                 }
                 loadState.append is LoadState.Loading -> {
@@ -126,8 +126,9 @@ class MoviePagingSource(
         }
     }
 
+    /* this method will triggered and return a key page to load method
+     when you call refresh() method on adapter to return the desired key */
     override fun getRefreshKey(state: PagingState<Int, PopularMoviesResponse.MovieDetails>): Int? {
-        //******i didn't understand this method.
         // Try to find the page key of the closest page to anchorPosition, from
         // either the prevKey or the nextKey, but you need to handle nullability
         // here:
@@ -135,6 +136,8 @@ class MoviePagingSource(
         //  * nextKey == null -> anchorPage is the last page.
         //  * both prevKey and nextKey null -> anchorPage is the initial page, so
         //    just return null.
+
+        //this code below will return the closet key page to the current key pahe on refresh
         return state.anchorPosition?.let { anchorPosition ->
             val anchorPage = state.closestPageToPosition(anchorPosition)
             anchorPage?.prevKey?.minus(1) ?: anchorPage?.nextKey?.plus(1)

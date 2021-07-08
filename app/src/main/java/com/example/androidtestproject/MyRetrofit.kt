@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import kotlinx.android.synthetic.main.activity_my_retrofit.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -23,7 +24,7 @@ class MyRetrofit : AppCompatActivity() {
             .build()
         val retrofitService = retrofit.create(MyRetroApi::class.java)
         btn_call_api.setOnClickListener {
-            CoroutineScope(Dispatchers.Main).launch {
+            lifecycleScope.launch {
                 try {
                     val myTime = System.currentTimeMillis()
                     // using async instead of usual 2 api call makes it faster because async makes 2 apis run at the same time while the usual one makes 1 api run then after it finishes the second api runs and so on

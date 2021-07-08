@@ -27,6 +27,18 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "myDimenstion"
+
+    productFlavors {
+        free {
+            dimension "myDimenstion"
+        }
+        paid {
+            dimension "myDimenstion"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -44,12 +56,12 @@ android {
         viewBinding true
     }
 
-   /* your tests interact with several Android framework dependencies, or interact with those dependencies in a complex way
-    , use the Robolectric artifacts that AndroidX Test provides.
-    Robolectric executes real Android framework code and fakes of native framework code on your local JVM or on a real device.*/
-   /* testOptions {
-        unitTests.includeAndroidResources = true
-    }*/
+    /* your tests interact with several Android framework dependencies, or interact with those dependencies in a complex way
+     , use the Robolectric artifacts that AndroidX Test provides.
+     Robolectric executes real Android framework code and fakes of native framework code on your local JVM or on a real device.*/
+    /* testOptions {
+         unitTests.includeAndroidResources = true
+     }*/
 }
 
 dependencies {
@@ -62,6 +74,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.2"
     implementation 'androidx.fragment:fragment-ktx:1.3.0'
+    implementation 'androidx.activity:activity-ktx:1.2.0'
 
     implementation 'com.google.android.exoplayer:exoplayer:2.11.8'
     // custom youtube library
@@ -89,14 +102,19 @@ dependencies {
     //paging3 library
     def paging_version = "3.0.0-beta01"
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
-    implementation "androidx.paging:paging-guava:$paging_version" // optional - Guava ListenableFuture support LiveData
+    implementation "androidx.paging:paging-guava:$paging_version" //optional - live data support
+    //work manager - for schedule tasks
+    implementation "androidx.work:work-runtime-ktx:2.5.0"
+
 
     def googleTruthVersion = "1.1.2"
     //for local unit test
-    testImplementation 'junit:junit:4.13.2' // Required -- JUnit 4 framework standard test library for android included by default
+    testImplementation 'junit:junit:4.13.2'
+    // Required -- JUnit 4 framework standard test library for android included by default
     // Assertions is used for testing equality results that makes it more readable for us
     testImplementation "com.google.truth:truth:$googleTruthVersion" //for test package
-    androidTestImplementation "com.google.truth:truth:$googleTruthVersion" // for androidTest package
+    androidTestImplementation "com.google.truth:truth:$googleTruthVersion"
+    // for androidTest package
     //ui test libraries
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
