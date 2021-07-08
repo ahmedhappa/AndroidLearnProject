@@ -18,11 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTestProject">
         <activity android:name=".LearnServicesActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MyDownloadManagerActivity" />
         <activity android:name=".MyCoroutineActivity" />
@@ -37,7 +33,13 @@
         <activity android:name=".CollapsingToolbarWithSubtitleActivity" />
         <activity android:name=".motionlayout.MyMotionLayoutActivity" />
         <activity android:name=".RecyclerWithListAdapterActivity" />
-        <activity android:name=".MyRetrofit" />
+        <activity android:name=".MyRetrofit" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".YoutubeVimeoVideoStreamingActivity" />
         <activity android:name=".MainActivity" />
         <!--        This permission is required for android O+-->
