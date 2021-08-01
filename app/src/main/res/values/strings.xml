@@ -3,4 +3,7 @@
     <string name="my_name">ahmed</string>
     <string name="str_text_from_main">Layout : This layout is in main package</string>
     <string name="str_changeable_text">Changeable Text : Text From Main</string>
+    <string name="str_dummy">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tincidunt sollicitudin dui faucibus bibendum. Donec lacinia semper orci efficitur aliquet. Nulla mollis pharetra tellus. Nulla id interdum leo, quis vestibulum ipsum. Morbi dapibus felis lectus, vitae suscipit turpis scelerisque eu. Aliquam nec velit cursus, rutrum neque sed, congue est. Nulla commodo mollis est, ut sagittis metus molestie sed. Curabitur vulputate erat hendrerit arcu venenatis dapibus.
+    </string>
 </resources>

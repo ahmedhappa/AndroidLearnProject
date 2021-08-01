@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><!--recommended height for expanded notifications is 256dp-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="256dp"
+    android:orientation="vertical">
+
+    <!--    it is recommended to use notification predefined style to support diff apis versions -->
+    <TextView
+        android:id="@+id/tv_notification_expanded"
+        style="@style/TextAppearance.Compat.Notification.Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Expanded State"
+        android:textAlignment="center" />
+
+    <ImageView
+        android:id="@+id/iv_notification_expanded"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_spider_man" />
+
+</LinearLayout>

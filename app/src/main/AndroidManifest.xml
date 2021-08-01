@@ -4,22 +4,26 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--  needed for jobIntentService for android versions less thane oreo-->
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <!--    needed permission for foreground services-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- needed for jobIntentService for android versions less thane oreo -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- needed permission for foreground services -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
+        android:name=".AndroidTestProjectApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidTestProject">
-        <activity android:name=".LearnServicesActivity">
+        <activity android:name=".LearnNotificationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".LearnServicesActivity"></activity>
         <activity android:name=".MyDownloadManagerActivity" />
         <activity android:name=".MyCoroutineActivity" />
         <activity android:name=".MyFlavorActivity" />
@@ -33,20 +37,18 @@
         <activity android:name=".CollapsingToolbarWithSubtitleActivity" />
         <activity android:name=".motionlayout.MyMotionLayoutActivity" />
         <activity android:name=".RecyclerWithListAdapterActivity" />
-        <activity android:name=".MyRetrofit" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MyRetrofit">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".YoutubeVimeoVideoStreamingActivity" />
-        <activity android:name=".MainActivity" />
-        <!--        This permission is required for android O+-->
+        <activity android:name=".MainActivity" /> <!-- This permission is required for android O+ -->
         <service
             android:name=".MyIntentService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-        <service android:name=".MyForegroundService"/>
+        <service android:name=".MyForegroundService" />
+
+        <receiver android:name=".MyBroadCastReceiver" />
+        <receiver android:name=".MessageStyleBroadCast" />
     </application>
 
 </manifest>

@@ -14,7 +14,7 @@
         android:background="?attr/colorPrimary"
         android:contentDescription="@null"
         android:scaleType="centerCrop"
-        android:src="@drawable/img1" />
+        android:src="@drawable/img_spider_man" />
     <!--    transformPivotX and transformPivotY is to move text horizontal
     or vertical in it's own boundaries when the text is smaller than it's boundaries-->
     <TextView
