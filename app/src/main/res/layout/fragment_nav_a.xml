@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:contentDescription="@null"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_spider_man" />
+
+        <TextView
+            android:id="@+id/tv_fragment_a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello From Fragment A" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go_to_fragment_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go To Fragment B" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@android:color/holo_green_dark" />
+
+        <EditText
+            android:id="@+id/et_change_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Enter string to replace it with string in shared view model" />
+
+        <Button
+            android:id="@+id/btn_change_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change string in shared view model" />
+
+        <TextView
+            android:id="@+id/tv_shared_view_model_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@android:color/holo_green_dark" />
+
+        <TextView
+            android:id="@+id/tv_data_from_next_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="@android:color/holo_green_dark" />
+
+        <Button
+            android:id="@+id/btn_navigate_with_deep_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Go to fragment c using deeplink" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

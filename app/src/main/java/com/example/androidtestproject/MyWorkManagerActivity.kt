@@ -1,13 +1,15 @@
 package com.example.androidtestproject
 
+import android.app.Notification
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
+import androidx.core.app.NotificationCompat
 import androidx.work.*
 import com.example.androidtestproject.MyWorkManagerActivity.Companion.passedDataKey
 import com.example.androidtestproject.databinding.ActivityMyWorkManagerBinding
-import kotlinx.coroutines.delay
 import java.util.concurrent.TimeUnit
 
 class MyWorkManagerActivity : AppCompatActivity() {
@@ -97,7 +99,7 @@ class MyWorkManagerActivity : AppCompatActivity() {
             //Now, if the code runs while a MyFirstWork is already in the queue, the existing job is kept and no new job is added.
             //if the task request finished you can enqueue it again without creating another object from task request
             workManager.enqueueUniqueWork(
-                "myWorkName", ExistingWorkPolicy.KEEP, myOneTimeWorkRequest
+                "myWorkName", ExistingWorkPolicy.KEEP, mySimpleOneTimeWorkRequest
             )
         }
 
@@ -137,14 +139,28 @@ class MyWorkManagerActivity : AppCompatActivity() {
                 .then(mySecondOneTimeRequest)
                 .enqueue()
         }
+
+        val foregroundWorkManager = OneTimeWorkRequest.from(ForegroundWorkManager::class.java)
+        binding.btnStartForegroundWorkManager.setOnClickListener {
+            workManager.enqueueUniqueWork(
+                "foregroundWorkManager", ExistingWorkPolicy.KEEP, foregroundWorkManager
+            )
+        }
     }
 }
 
 /* This class is where all the background work happen
 * just extend the Worker class and override the doWork() method and place the code there
  */
+
+/* if the application is killed or cleared from recent tasks before work class finishes it's work it will
+launch again
+*/
 class MyFirstWork(appContext: Context, workerParameters: WorkerParameters) :
     Worker(appContext, workerParameters) {
+    /* every time a new object of this class is created that is why innerData doesn't change when enqueue the
+     same class more then one time */
+    private var innerData: String = "initial value"
 
     //this is where the WorkManager starts the work
     /* you can return 3 results object to that method :
@@ -154,11 +170,16 @@ class MyFirstWork(appContext: Context, workerParameters: WorkerParameters) :
       */
     override fun doWork(): Result {
         return try {
-            val data = inputData.getString(passedDataKey) ?: Result.failure()
+            val data = inputData.getString(passedDataKey) ?: "No Data Passed"
             // you can do some work here in the background
             Log.e("WorkManager", "Doing some tasks")
             Log.e("WorkManager", "passed data : $data")
-            Thread.sleep(3_000)
+            for (i in 1..10) {
+                Log.e("WorkManager", "Doing Work $i")
+                SystemClock.sleep(1_000)
+            }
+            Log.e("WorkManager", "Inner data $innerData")
+            innerData = "inner data changed"
             Log.e("WorkManager", "Task executed successfully")
 //            Result.success()
             //can return data
@@ -167,6 +188,7 @@ class MyFirstWork(appContext: Context, workerParameters: WorkerParameters) :
             Log.e("WorkManager", "Task Failed")
             Result.failure()
             // if you want to retry task,return Result.retry()
+//            Result.retry()
         }
     }
 
@@ -192,5 +214,40 @@ class MySecondWork(appContext: Context, workerParameters: WorkerParameters) :
             Log.e("WorkManager", "Second Failed")
             Result.failure()
         }
+    }
+}
+
+//this foreground work manager is used to run immediate long running operations
+class ForegroundWorkManager(private val appContext: Context, workerParameters: WorkerParameters) :
+    Worker(appContext, workerParameters) {
+    override fun doWork(): Result {
+        return try {
+            /*
+             Call setForegroundAsync() before your long running task is a must.
+             Otherwise your worker will be treated as non-foreground service until setForegroundAsync() has been called,
+             which might result in unwanted results such as work being cancelled.
+             */
+            setForegroundAsync(getForegroundInfo())
+            Log.e("Foreground WorkManager", "Started")
+            SystemClock.sleep(5000)
+            Log.e("Foreground WorkManager", "Finished Successfully")
+            Result.success()
+        } catch (e: Exception) {
+            Log.e("Foreground WorkManager", "Failed")
+            Result.failure()
+        }
+    }
+
+    private fun getForegroundInfo(): ForegroundInfo {
+        return ForegroundInfo(1, createForegroundNotification())
+    }
+
+    private fun createForegroundNotification(): Notification {
+        return NotificationCompat.Builder(appContext, AndroidTestProjectApp.NOTIFICATION_CHANNEL_ID)
+            .setSmallIcon(R.drawable.ic_like)
+            .setContentTitle("Foreground WorkManager")
+            .setContentText("running a long task")
+            .setOngoing(true)
+            .build()
     }
 }

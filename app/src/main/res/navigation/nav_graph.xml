@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?><!--app:startDestination="@id/navAFragment" specify the start destination fragment-->
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navAFragment">
+
+    <fragment
+        android:id="@+id/navAFragment"
+        android:name="com.example.androidtestproject.navigation.NavAFragment"
+        android:label="NavAFragment"
+        tools:layout="@layout/fragment_nav_a">
+        <action
+            android:id="@+id/action_navAFragment_to_navBFragment"
+            app:destination="@id/navBFragment" />
+    </fragment>
+    <!--argument is to say to all actions that this class expect to have an argument-->
+    <fragment
+        android:id="@+id/navBFragment"
+        android:name="com.example.androidtestproject.navigation.NavBFragment"
+        android:label="NavBFragment"
+        tools:layout="@layout/fragment_nav_b">
+        <action
+            android:id="@+id/action_navBFragment_to_navCFragment"
+            app:destination="@id/navCFragment" />
+        <argument
+            android:name="extra_data"
+            android:defaultValue="no data entered"
+            app:argType="string" />
+    </fragment>
+    <!--this nav graph is making a loop because With each navigation action,
+       a destination is added to the back stack. If you were to navigate
+       repeatedly through this flow, your back stack would then contain
+       multiple sets of each destination (A, B, C, A, B, C, A, and so on).
+       To avoid this repetition, you can specify app:popUpTo and app:popUpToInclusive
+       in the action-->
+    <!--app:popUpTo="@id/navAFragment" cleare every fragment from the back
+    stack starting with this destination which is fragment C to the Fragment
+    A Not including fragment A -->
+    <!--app:popUpToInclusive="true" to include fragmentA with removing from back stack-->
+    <fragment
+        android:id="@+id/navCFragment"
+        android:name="com.example.androidtestproject.navigation.NavCFragment"
+        android:label="NavCFragment"
+        tools:layout="@layout/fragment_nav_c">
+        <action
+            android:id="@+id/action_navCFragment_to_navAFragment"
+            app:destination="@id/navAFragment"
+            app:popUpTo="@id/navAFragment"
+            app:popUpToInclusive="true" />
+
+        <!--deepLink  allows you to navigate directly to this fragment no
+         matter where you currently are in the NavGraph-->
+
+        <!--Deep links can also be matched using intent actions and MIME types.
+        Instead of requiring destinations to match by URI, you can provide the deep
+        link with an action or MIME type and match with that instead. You can
+        specify multiple match types for a single deep link, ## but note that URI
+        argument matching is prioritized first, followed by action, and then
+        mimeType.-->
+        <deepLink
+            android:id="@+id/deepLink"
+            app:action="android.intent.action.myAction"
+            app:mimeType="myType/mySubtype"
+            app:uri="www.example.com/fragmentc" />
+    </fragment>
+</navigation>

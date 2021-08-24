@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".dependency_injection.LearnDependencyInjectionActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_start_second_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Go To Second Activity" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_show_injected_theme_class_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show injected theme class data" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_show_injected_class_inherit_interface_with_bind_annotation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show injected class that inherit from interface with bind" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_show_which_calnder_injected_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Which Calendar is injected data" />
+
+</LinearLayout>

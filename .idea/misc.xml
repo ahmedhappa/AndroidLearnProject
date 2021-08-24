@@ -5,8 +5,16 @@
       <map>
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25833333333333336" />
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.25833333333333336" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_di_second.xml" value="0.3338541666666667" />
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_learn_broadcast_receiver.xml" value="0.32871794871794874" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_learn_dependency_injection.xml" value="0.3338541666666667" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_learn_navigation.xml" value="0.315625" />
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_learn_notification.xml" value="0.23846153846153847" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_my_work_manager.xml" value="0.3338541666666667" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_second.xml" value="0.3338541666666667" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/fragment_nav_a.xml" value="0.33177083333333335" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/fragment_nav_b.xml" value="0.3338541666666667" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/fragment_nav_c.xml" value="0.3338541666666667" />
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/notification_custom_collapsed.xml" value="0.2421875" />
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/notification_custom_expanded.xml" value="0.2421875" />
       </map>

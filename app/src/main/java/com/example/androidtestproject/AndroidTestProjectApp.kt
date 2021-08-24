@@ -6,7 +6,9 @@ import android.app.NotificationChannelGroup
 import android.app.NotificationManager
 import android.content.Context
 import android.os.Build
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp //this annotation is a must to use hilt in project it is used and initialized, to add a container that is attached to the app's lifecycle
 class AndroidTestProjectApp : Application() {
     companion object {
         const val NOTIFICATION_CHANNEL_ID = "notification_channel_id"
