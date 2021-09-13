@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidTestProject</string>
+    <string name="app_name">AndroidLearnProject</string>
     <string name="my_name">ahmed</string>
     <string name="str_text_from_main">Layout : This layout is in main package</string>
     <string name="str_changeable_text">Changeable Text : Text From Main</string>

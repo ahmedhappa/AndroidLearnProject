@@ -9,12 +9,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
-        applicationId "com.example.androidtestproject"
+        applicationId "com.example.androidlearnproject"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode 1
         versionName "1.0"
 
@@ -107,7 +107,7 @@ dependencies {
     implementation "androidx.paging:paging-runtime-ktx:$paging_version"
     implementation "androidx.paging:paging-guava:$paging_version" //optional - live data support
     //work manager - for schedule tasks
-    implementation "androidx.work:work-runtime-ktx:2.5.0"
+    implementation "androidx.work:work-runtime-ktx:2.6.0"
     //notification media
     implementation 'androidx.media:media:1.4.1'
     //navigation library

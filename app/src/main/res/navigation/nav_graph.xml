@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navAFragment"
-        android:name="com.example.androidtestproject.navigation.NavAFragment"
+        android:name="com.example.androidlearnproject.navigation.NavAFragment"
         android:label="NavAFragment"
         tools:layout="@layout/fragment_nav_a">
         <action
@@ -17,7 +17,7 @@
     <!--argument is to say to all actions that this class expect to have an argument-->
     <fragment
         android:id="@+id/navBFragment"
-        android:name="com.example.androidtestproject.navigation.NavBFragment"
+        android:name="com.example.androidlearnproject.navigation.NavBFragment"
         android:label="NavBFragment"
         tools:layout="@layout/fragment_nav_b">
         <action
@@ -40,7 +40,7 @@
     <!--app:popUpToInclusive="true" to include fragmentA with removing from back stack-->
     <fragment
         android:id="@+id/navCFragment"
-        android:name="com.example.androidtestproject.navigation.NavCFragment"
+        android:name="com.example.androidlearnproject.navigation.NavCFragment"
         android:label="NavCFragment"
         tools:layout="@layout/fragment_nav_c">
         <action
