@@ -51,7 +51,6 @@ object AppModule {
     @CustomDateCalendar
     @Provides
     @Singleton
-
 /* Each Hilt container comes with a set of default predefined bindings that can be injected as dependencies into
 your custom bindings. This is the case with applicationContext. To access it, you need to annotate
 the field with @ApplicationContext */

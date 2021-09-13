@@ -5,8 +5,12 @@
       <map>
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.25833333333333336" />
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.25833333333333336" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_chart.xml" value="0.3338541666666667" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_collapsing_toolbar_with_subtitle.xml" value="0.21851851851851853" />
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_di_second.xml" value="0.3338541666666667" />
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_learn_broadcast_receiver.xml" value="0.32871794871794874" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_learn_camera.xml" value="0.33177083333333335" />
+        <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_learn_date_and_time.xml" value="0.3338541666666667" />
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_learn_dependency_injection.xml" value="0.3338541666666667" />
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_learn_navigation.xml" value="0.315625" />
         <entry key="..\:/Mine/WorkSpace/Android/Android_Projects/AndroidTestProject/app/src/main/res/layout/activity_learn_notification.xml" value="0.23846153846153847" />
@@ -20,7 +24,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="14" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="16" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

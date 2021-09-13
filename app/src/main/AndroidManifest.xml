@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.androidtestproject" >
+    package="com.example.androidtestproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- needed for jobIntentService for android versions less thane oreo -->
-    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- needed permission for foreground services -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- needed permission for foreground services -->
+    <!-- needed for jobIntentService for android versions less thane oreo -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!--    needed for cameraX library-->
+    <uses-feature android:name="android.hardware.camera.any" /> <!--this makes sure that the device has camera (front or back)-->
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:name=".AndroidTestProjectApp"
@@ -15,19 +19,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidTestProject" >
+        android:theme="@style/Theme.AndroidTestProject">
         <activity
-            android:name=".dependency_injection.DISecondActivity"
-            android:exported="true" />
-        <activity
-            android:name=".dependency_injection.LearnDependencyInjectionActivity"
-            android:exported="true" >
+            android:name=".LearnCameraActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LearnDateAndTimeActivity" />
+        <activity android:name=".dependency_injection.DISecondActivity" />
+        <activity android:name=".dependency_injection.LearnDependencyInjectionActivity" />
         <activity android:name=".navigation.LearnNavigationActivity" />
         <activity android:name=".broadcastreceiver.LearnBroadcastReceiverActivity" />
         <activity android:name=".LearnNotificationActivity" />
@@ -51,7 +55,7 @@
         <!-- some receivers isn't working for api 24 or 26 and higher because these versions have some limitations -->
         <receiver
             android:name=".broadcastreceiver.MyStaticBroadcastReceiver"
-            android:exported="true" > <!-- set exported to true because this class will be triggered by outer apps -->
+            android:exported="true"> <!-- set exported to true because this class will be triggered by outer apps -->
             <!-- this receiver will listen to language change event even when the app is not running -->
             <intent-filter>
                 <action android:name="android.intent.action.LOCALE_CHANGED" />

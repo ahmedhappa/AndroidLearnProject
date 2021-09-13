@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".LearnDateAndTimeActivity">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_create_date_at_specific_point"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Date At Specific Point" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_get_current_date_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Current Date and time" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_manipulate_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Manipulate Date" />
+</LinearLayout>
