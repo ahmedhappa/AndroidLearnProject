@@ -2,6 +2,7 @@ package com.example.androidlearnproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
 import com.example.androidlearnproject.databinding.ActivityMyCoroutineBinding
@@ -21,10 +22,11 @@ class MyCoroutineActivity : AppCompatActivity() {
         binding.btnTestCoroutine.setOnClickListener {
             var temp = 1
             lifecycleScope.launch {
+                Log.i("Scope inside Before", temp.toString())
                 temp = ioCoroutine(temp)
-                Log.i("Coroutine Test InSide", temp.toString())
+                Log.i("Scope inside After", temp.toString())
             }
-            Log.i("Coroutine Test OutSide", temp.toString())
+            Log.i("Scope OutSide After", temp.toString())
         }
 
         binding.btnEnterAct.setOnClickListener {
@@ -43,7 +45,9 @@ class MyCoroutineActivity : AppCompatActivity() {
     private suspend fun mainCoroutineWithBlocking(number: Int): Int {
         val result = number + 1
 //        this way will freeze any thread and block the ui thread if this function is called from main thread
-        Thread.sleep(3000)
+//        Thread.sleep(3000)
+        //equivalent way for Thread.sleep(3000) but this way is handling exception automatically
+        SystemClock.sleep(3000)
         // freeze with another way
 //        for (i in Integer.MIN_VALUE..Int.MAX_VALUE) {
 //            val x = true
@@ -52,11 +56,12 @@ class MyCoroutineActivity : AppCompatActivity() {
     }
 
     private suspend fun ioCoroutine(number: Int): Int {
-        var result = 0
+        var result: Int
         Log.i("Coroutine", "Before Io Coroutine")
+        //this will suspend the scope which is calling it but will not block the main ui
         withContext(Dispatchers.IO) {
             result = number - 10
-            Thread.sleep(3000)
+            SystemClock.sleep(3000)
         }
         Log.i("Coroutine", "After Io Coroutine")
         return result

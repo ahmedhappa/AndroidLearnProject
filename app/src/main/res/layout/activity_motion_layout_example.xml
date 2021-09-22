@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layoutDescription="@xml/motion_scene_example"
-    tools:context=".motionlayout.MotionLayoutExampleActivity">
+    tools:context=".animation.motionlayout.MotionLayoutExampleActivity">
 
     <TextView
         android:id="@+id/tv1"

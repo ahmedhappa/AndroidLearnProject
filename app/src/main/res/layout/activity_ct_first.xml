@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".animation.transitions_materialmotion.container_transform.example1_activity.CTFirstActivity">
+
+    <ImageView
+        android:id="@+id/iv_first_screen"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:contentDescription="@null"
+        android:transitionName="first_screen_image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_spider_man" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_first_screen_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="This is Description" />
+
+</LinearLayout>

@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_ct_first.xml" value="0.23846153846153847" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_ct_main.xml" value="0.23846153846153847" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_ct_second.xml" value="0.23796296296296296" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_ctviews_transition.xml" value="0.228125" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_fa_first.xml" value="0.2421875" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_fa_second.xml" value="0.2421875" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_fviews_transition.xml" value="0.2421875" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_my_coroutine.xml" value="0.2421875" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_my_motion_layout.xml" value="0.1" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_sa_first.xml" value="0.2421875" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_sa_second.xml" value="0.2421875" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/activity_saviews_transition.xml" value="0.2421875" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/fragment_ct_first_list.xml" value="0.2421875" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/fragment_ct_second_details.xml" value="0.2421875" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/fragment_ct_thired_fab.xml" value="0.2421875" />
+        <entry key="..\:/WorkSpace/Android/Android_Projects/AndroidLearnProject/app/src/main/res/layout/item_ct_first_screen.xml" value="0.23846153846153847" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

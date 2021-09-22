@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!-- To help develop complex animations with MotionLayout,
-    you can draw the animation path of every view.
-    motion:motionDebug="SHOW_PATH"
+    -motion:motionDebug="SHOW_PATH" to draw the animation path of every view.
     -Circles represent the start or end position of one view.
     -Lines represent the path of one view.
     -Diamonds represent a KeyPosition that modifies the path.
@@ -12,7 +11,7 @@
     android:layout_height="match_parent"
     app:layoutDescription="@xml/motion_scene_my_scene"
     app:motionDebug="SHOW_ALL"
-    tools:context=".motionlayout.MyMotionLayoutActivity">
+    tools:context=".animation.motionlayout.MyMotionLayoutActivity">
     <!--    All Views Must Have Id-->
     <!-- Any constraints specified in a ConstraintSet(XML File) will override the constraints specified in the layout file.
      If you define constraints in both the layout and the MotionScene, only the constraints in the MotionScene

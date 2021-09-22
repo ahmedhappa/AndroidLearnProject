@@ -1,4 +1,4 @@
-package com.example.androidlearnproject.motionlayout
+package com.example.androidlearnproject.animation.motionlayout
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -3,13 +3,11 @@
     package="com.example.androidlearnproject">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!-- needed permission for foreground services -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- needed permission for foreground services -->
     <!-- needed for jobIntentService for android versions less thane oreo -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <!--    needed for cameraX library-->
-    <uses-feature android:name="android.hardware.camera.any" /> <!--this makes sure that the device has camera (front or back)-->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" /> <!-- needed for cameraX library -->
+    <uses-feature android:name="android.hardware.camera.any" /> <!-- this makes sure that the device has camera (front or back) -->
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application
@@ -20,6 +18,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.androidlearnproject">
+        <activity android:name=".animation.transitions_materialmotion.fade.FViewsTransitionActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".animation.transitions_materialmotion.fade_through.FTFirstActivity" />
+        <activity android:name=".animation.transitions_materialmotion.fade_through.FTSecondActivity" />
+        <activity android:name=".animation.transitions_materialmotion.shared_axis.example2_views.SAViewsTransitionActivity" />
+        <activity android:name=".animation.transitions_materialmotion.shared_axis.example1_activity.SAFirstActivity" />
+        <activity android:name=".animation.transitions_materialmotion.shared_axis.example1_activity.SASecondActivity" />
+        <activity android:name=".animation.transitions_materialmotion.container_transform.example3_views.CTViewsTransitionActivity" />
+        <activity android:name=".animation.transitions_materialmotion.container_transform.example2_activity_fragment_list_fab.CtMainActivity" />
+        <activity android:name=".animation.transitions_materialmotion.container_transform.example1_activity.CTFirstActivity" />
+        <activity android:name=".animation.transitions_materialmotion.container_transform.example1_activity.CTSecondActivity" />
         <activity android:name=".LearnCameraActivity" />
         <activity android:name=".LearnDateAndTimeActivity" />
         <activity android:name=".dependency_injection.DISecondActivity" />
@@ -33,21 +46,13 @@
         <activity android:name=".MyFlavorActivity" />
         <activity android:name=".MyWorkManagerActivity" />
         <activity android:name=".ActivityResultApiActivity" />
-        <activity
-            android:name=".Paging3LibraryActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".Paging3LibraryActivity" />
         <activity android:name=".MyJunitTest" />
         <activity android:name=".ChartActivity" />
         <activity android:name=".FirebaseOTPAuthenticationActivity" />
-        <activity android:name=".motionlayout.MotionLayoutExampleActivity" />
+        <activity android:name=".animation.motionlayout.MotionLayoutExampleActivity" />
         <activity android:name=".CollapsingToolbarWithSubtitleActivity" />
-        <activity android:name=".motionlayout.MyMotionLayoutActivity" />
+        <activity android:name=".animation.motionlayout.MyMotionLayoutActivity" />
         <activity android:name=".RecyclerWithListAdapterActivity" />
         <activity android:name=".MyRetrofit" />
         <activity android:name=".YoutubeVimeoVideoStreamingActivity" />
@@ -60,7 +65,8 @@
             <intent-filter>
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
             </intent-filter>
-        </receiver> <!-- this receiver doesn't have intent filters because it is explicit receiver -->
+        </receiver>
+        <!-- this receiver doesn't have intent filters because it is explicit receiver -->
         <receiver
             android:name=".broadcastreceiver.MyExplicitStaticBroadcastReceiver"
             android:exported="false" /> <!-- exported false means it can't be run from outside this app -->

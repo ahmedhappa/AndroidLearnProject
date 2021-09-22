@@ -2,6 +2,7 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
     <!--    autoTransition is to automatically start transition  -->
+    <!--    staggered is to make animation run one by one in a good view way-->
     <Transition
         motion:autoTransition="animateToEnd"
         motion:constraintSetEnd="@+id/end"
@@ -39,5 +40,7 @@
             motion:layout_constraintTop_toBottomOf="@+id/card1" />
     </ConstraintSet>
 
+    <!--We Don't need to specify constrains to end ConstraintSet because it will use the sizes and constraint from the layout
+    it self (the layout xml file).-->
     <ConstraintSet android:id="@+id/end"></ConstraintSet>
 </MotionScene>
