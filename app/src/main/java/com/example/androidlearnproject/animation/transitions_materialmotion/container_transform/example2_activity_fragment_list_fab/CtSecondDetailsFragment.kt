@@ -13,6 +13,7 @@ import androidx.core.content.res.use
 import androidx.fragment.app.Fragment
 import com.example.androidlearnproject.R
 import com.example.androidlearnproject.databinding.FragmentCtSecondDetailsBinding
+import com.google.android.material.color.MaterialColors
 import com.google.android.material.transition.MaterialContainerTransform
 
 class CtSecondDetailsFragment : Fragment() {

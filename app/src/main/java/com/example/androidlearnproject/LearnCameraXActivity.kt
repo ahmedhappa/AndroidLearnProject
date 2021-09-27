@@ -1,18 +1,16 @@
 package com.example.androidlearnproject
 
 import android.Manifest
-import android.content.Context
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.SystemClock
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
-import com.example.androidlearnproject.databinding.ActivityLearnCameraBinding
+import com.example.androidlearnproject.databinding.ActivityLearnCameraXBinding
 import java.io.File
 import java.nio.ByteBuffer
 import java.text.SimpleDateFormat
@@ -20,14 +18,14 @@ import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
-class LearnCameraActivity : AppCompatActivity() {
+class LearnCameraXActivity : AppCompatActivity() {
 
     companion object {
         private const val FILE_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
-        private const val TAG = "LearnCameraActivity"
+        private const val TAG = "LearnCameraXActivity"
     }
 
-    private lateinit var binding: ActivityLearnCameraBinding
+    private lateinit var binding: ActivityLearnCameraXBinding
     private lateinit var outputDirectory: File
     private lateinit var cameraExecutor: ExecutorService
     private var imageCapture: ImageCapture? = null
@@ -42,7 +40,7 @@ class LearnCameraActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLearnCameraBinding.inflate(layoutInflater)
+        binding = ActivityLearnCameraXBinding.inflate(layoutInflater)
         setContentView(binding.root)
         cameraPermission.launch(Manifest.permission.CAMERA)
         binding.btnCameraCapture.setOnClickListener {
@@ -114,7 +112,7 @@ class LearnCameraActivity : AppCompatActivity() {
             val preview = Preview.Builder().build().also { it.setSurfaceProvider(binding.previewViewFinder.surfaceProvider) }
             //build image analyzer use case
             val imageAnalyzer = ImageAnalysis.Builder().build().also {
-                it.setAnalyzer(ContextCompat.getMainExecutor(this@LearnCameraActivity), LuminosityAnalyzer { luma ->
+                it.setAnalyzer(ContextCompat.getMainExecutor(this@LearnCameraXActivity), LuminosityAnalyzer { luma ->
                     Log.d(TAG, "Average luminosity: $luma")
                 })
             }
@@ -150,7 +148,7 @@ class LearnCameraActivity : AppCompatActivity() {
                 override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
                     val savedUri = Uri.fromFile(photoFile)
                     val msg = "Photo capture succeeded: $savedUri"
-                    Toast.makeText(this@LearnCameraActivity, msg, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LearnCameraXActivity, msg, Toast.LENGTH_SHORT).show()
                     Log.d(TAG, msg)
                 }
 

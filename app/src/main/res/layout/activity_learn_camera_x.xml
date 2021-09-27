@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LearnCameraActivity">
+    tools:context=".LearnCameraXActivity">
 
     <!--    this is the view for the camera to be placed in-->
     <androidx.camera.view.PreviewView
