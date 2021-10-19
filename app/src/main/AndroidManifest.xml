@@ -18,7 +18,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.androidlearnproject">
-        <activity android:name=".animation.transitions_materialmotion.fade.FViewsTransitionActivity"/>
+        <activity
+            android:name=".alarmmanager.LearnAlarmManagerActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".animation.transitions_materialmotion.fade.FViewsTransitionActivity" />
         <activity android:name=".animation.transitions_materialmotion.fade_through.FTFirstActivity" />
         <activity android:name=".animation.transitions_materialmotion.fade_through.FTSecondActivity" />
         <activity android:name=".animation.transitions_materialmotion.shared_axis.example2_views.SAViewsTransitionActivity" />
@@ -28,12 +37,7 @@
         <activity android:name=".animation.transitions_materialmotion.container_transform.example2_activity_fragment_list_fab.CtMainActivity" />
         <activity android:name=".animation.transitions_materialmotion.container_transform.example1_activity.CTFirstActivity" />
         <activity android:name=".animation.transitions_materialmotion.container_transform.example1_activity.CTSecondActivity" />
-        <activity android:name=".LearnCameraXActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".LearnCameraXActivity"/>
         <activity android:name=".LearnDateAndTimeActivity" />
         <activity android:name=".dependency_injection.DISecondActivity" />
         <activity android:name=".dependency_injection.LearnDependencyInjectionActivity" />
@@ -65,8 +69,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.LOCALE_CHANGED" />
             </intent-filter>
-        </receiver>
-        <!-- this receiver doesn't have intent filters because it is explicit receiver -->
+        </receiver> <!-- this receiver doesn't have intent filters because it is explicit receiver -->
         <receiver
             android:name=".broadcastreceiver.MyExplicitStaticBroadcastReceiver"
             android:exported="false" /> <!-- exported false means it can't be run from outside this app -->
@@ -77,6 +80,7 @@
 
         <receiver android:name=".MyBroadCastReceiver" />
         <receiver android:name=".MessageStyleBroadCast" />
+        <receiver android:name=".alarmmanager.AlarmReceiver" />
     </application>
 
 </manifest>
