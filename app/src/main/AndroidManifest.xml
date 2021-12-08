@@ -34,7 +34,7 @@
         <activity android:name=".animation.transitions_materialmotion.shared_axis.example1_activity.SAFirstActivity" />
         <activity android:name=".animation.transitions_materialmotion.shared_axis.example1_activity.SASecondActivity" />
         <activity android:name=".animation.transitions_materialmotion.container_transform.example3_views.CTViewsTransitionActivity" />
-        <activity android:name=".animation.transitions_materialmotion.container_transform.example2_activity_fragment_list_fab.CtMainActivity" />
+        <activity android:name=".animation.transitions_materialmotion.container_transform.example2_act_fra_list_fab.CtMainActivity" />
         <activity android:name=".animation.transitions_materialmotion.container_transform.example1_activity.CTFirstActivity" />
         <activity android:name=".animation.transitions_materialmotion.container_transform.example1_activity.CTSecondActivity" />
         <activity android:name=".LearnCameraXActivity"/>

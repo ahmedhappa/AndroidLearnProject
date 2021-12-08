@@ -1,4 +1,4 @@
-package com.example.androidlearnproject.animation.transitions_materialmotion.container_transform.example2_activity_fragment_list_fab
+package com.example.androidlearnproject.animation.transitions_materialmotion.container_transform.example2_act_fra_list_fab
 
 import android.annotation.SuppressLint
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.example.androidlearnproject.animation.transitions_materialmotion.container_transform.example2_activity_fragment_list_fab
+package com.example.androidlearnproject.animation.transitions_materialmotion.container_transform.example2_act_fra_list_fab
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -13,7 +13,6 @@ import androidx.core.content.res.use
 import androidx.fragment.app.Fragment
 import com.example.androidlearnproject.R
 import com.example.androidlearnproject.databinding.FragmentCtSecondDetailsBinding
-import com.google.android.material.color.MaterialColors
 import com.google.android.material.transition.MaterialContainerTransform
 
 class CtSecondDetailsFragment : Fragment() {

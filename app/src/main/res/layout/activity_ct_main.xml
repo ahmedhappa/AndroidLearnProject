@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".animation.transitions_materialmotion.container_transform.example2_activity_fragment_list_fab.CtMainActivity">
+    tools:context=".animation.transitions_materialmotion.container_transform.example2_act_fra_list_fab.CtMainActivity">
 
     <FrameLayout
         android:id="@+id/frame_fragment_container"
