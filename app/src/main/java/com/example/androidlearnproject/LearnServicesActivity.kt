@@ -73,7 +73,7 @@ class LearnServicesActivity : AppCompatActivity() {
 
 
 //this service starts in a background thread and close it self after finishing code in onHandleWork()
-//## you can't force stop JobIntentService , it will be stopped automatically when the work in onHandleWork() is done
+// ## you can't force stop JobIntentService , it will be stopped automatically when the work in onHandleWork() is done
 /*if the application is killed or cleared from recent tasks before intent service finishes it's work it will
 launch again from the last intent it was working on.
 for example if you enqueued this intentService 3 times and it finished the first intent (first enqueue) and  the app killed

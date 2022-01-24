@@ -17,7 +17,7 @@ class ActivityResultApiActivity : AppCompatActivity() {
      , pick contact , ask for permission,.......)*/
     private val getContent = registerForActivityResult(ActivityResultContracts.GetContent()) {
         //result of call
-        Log.e("Data Uri", "${it.path}")
+        Log.e("Data Uri", "${it?.path}")
     }
 
     private val launchActivityForResult =

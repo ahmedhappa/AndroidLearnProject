@@ -13,7 +13,7 @@ import java.util.concurrent.ScheduledExecutorService
 import java.util.concurrent.TimeUnit
 
 //Executor is An object that executes submitted Runnable tasks which has a queue that stores tasks that can't run at the moment
-//## it is better and recommended to use coroutine over executors
+// ## it is better and recommended to use coroutine over executors
 class LearnExecutors : AppCompatActivity() {
     private lateinit var binding: ActivityLearnExecutorsBinding
     private val TAG = javaClass.simpleName

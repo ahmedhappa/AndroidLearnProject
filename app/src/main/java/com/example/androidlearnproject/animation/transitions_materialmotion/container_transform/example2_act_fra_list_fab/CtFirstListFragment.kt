@@ -20,7 +20,7 @@ class CtFirstListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        /*## this is really important for the back transition
+        /* ## this is really important for the back transition
         Typically, this first issue of the collapse not working is because when the Android
         Transition system is trying to run your return transition, the list of emails hasn't been inflated and
         populated into the RecyclerView yet. We need a way to wait until our HomeFragment lays out our list before

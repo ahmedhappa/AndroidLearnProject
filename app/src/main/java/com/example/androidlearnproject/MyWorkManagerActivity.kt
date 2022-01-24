@@ -104,7 +104,7 @@ class MyWorkManagerActivity : AppCompatActivity() {
         }
 
         //Schedule periodic work
-        //## The minimum repeat interval that can be defined is 15 minutes
+        // ## The minimum repeat interval that can be defined is 15 minutes
         val myPeriodicWorkRequest =
             PeriodicWorkRequestBuilder<MyFirstWork>(15, TimeUnit.MINUTES).build()
         binding.btnPeriodicWork.setOnClickListener {
