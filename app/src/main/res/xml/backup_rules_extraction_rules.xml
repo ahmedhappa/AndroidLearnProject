@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--exclude all files from backup to cloud and device transfer-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="root|file|database|sharedpref|external" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="root|file|database|sharedpref|external" />
+    </device-transfer>
+</data-extraction-rules>

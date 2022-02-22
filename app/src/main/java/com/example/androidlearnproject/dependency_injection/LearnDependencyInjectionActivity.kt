@@ -71,12 +71,12 @@ class LearnDependencyInjectionActivity : AppCompatActivity() {
 
         }
 
-        viewModel.calendarLiveData.observe(this, {
+        viewModel.calendarLiveData.observe(this) {
             Toast.makeText(
                 this@LearnDependencyInjectionActivity,
                 "Calendar : ${it.get(Calendar.YEAR)} ${it.get(Calendar.MONTH)} ${it.get(Calendar.DAY_OF_MONTH)}",
                 Toast.LENGTH_LONG
             ).show()
-        })
+        }
     }
 }

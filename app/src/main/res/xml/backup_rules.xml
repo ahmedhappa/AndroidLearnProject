@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--exclude all files from backup to cloud and device transfer-->
+<full-backup-content>
+    <exclude domain="root|file|database|sharedpref|external" />
+</full-backup-content>
