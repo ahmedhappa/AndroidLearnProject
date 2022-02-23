@@ -21,19 +21,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.androidlearnproject">
         <activity
-            android:name=".LearnDataStore"
+            android:name=".animation.LearnLottieActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LearnDataStore" />
         <activity android:name=".flow.LearnFlowActivity" />
         <activity android:name=".LearnExecutors" />
-        <activity
-            android:name=".alarmmanager.LearnAlarmManagerActivity"
-            android:exported="true" />
+        <activity android:name=".alarmmanager.LearnAlarmManagerActivity" />
         <activity android:name=".animation.transitions_materialmotion.fade.FViewsTransitionActivity" />
         <activity android:name=".animation.transitions_materialmotion.fade_through.FTFirstActivity" />
         <activity android:name=".animation.transitions_materialmotion.fade_through.FTSecondActivity" />
