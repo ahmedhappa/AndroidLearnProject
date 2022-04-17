@@ -25,7 +25,7 @@ class YoutubeVimeoVideoStreamingActivity : AppCompatActivity() {
 
     private var videoPlayer: SimpleExoPlayer? = null
 
-    private val YOUTUBE_API_KEY = "AIzaSyBZusYKKoym7fnVGKZnmM2keES489_Ik7Q"
+    private val YOUTUBE_API_KEY = "" //put youtube api key here
     var videoDuration = 0
     val videoUrl = "https://player.vimeo.com/video/425396315"
 
