@@ -1,6 +1,5 @@
 package com.example.androidlearnproject
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +10,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
@@ -22,7 +22,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.annotations.SerializedName
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.w3c.dom.Text
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -272,6 +271,7 @@ class MovieWithSeparatorAdapter :
             is Paging3LibraryViewModel.UiModel.Separator -> (holder as LanguageViewHolder).bind(
                 uiModel.value
             )
+            else -> Unit
         }
     }
 

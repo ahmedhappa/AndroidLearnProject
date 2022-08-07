@@ -9,7 +9,6 @@ import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.provider.Settings
@@ -17,6 +16,7 @@ import android.support.v4.media.session.MediaSessionCompat
 import android.widget.RemoteViews
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.*
 import com.example.androidlearnproject.databinding.ActivityLearnNotificationBinding
 
@@ -373,19 +373,21 @@ class LearnNotificationActivity : AppCompatActivity() {
 
 class MessageStyleBroadCast : BroadcastReceiver() {
     override fun onReceive(context: Context?, intent: Intent?) {
-        val remoteInput = RemoteInput.getResultsFromIntent(intent)
-        //this can be null so we need to check first
-        context?.also {
-            remoteInput?.also {
-                //same key used to initialize  remote input
-                val text = remoteInput.getCharSequence("key_notification_remote_input")
-                val message = Message(text.toString(), null) // pass null to indicate that is the current user
-                //here you can call api to send data to the backend
-                LearnNotificationActivity.listOfMessages.add(message)
-                val notificationManager = NotificationManagerCompat.from(context)
-                val myNotification = LearnNotificationActivity.buildMessageStyleNotification(context)
-                //notify with the same message id to remove the old one
-                notificationManager.notify(1, myNotification.build())
+        intent?.also {
+            val remoteInput = RemoteInput.getResultsFromIntent(it)
+            //this can be null so we need to check first
+            context?.also {
+                remoteInput?.also {
+                    //same key used to initialize  remote input
+                    val text = remoteInput.getCharSequence("key_notification_remote_input")
+                    val message = Message(text.toString(), null) // pass null to indicate that is the current user
+                    //here you can call api to send data to the backend
+                    LearnNotificationActivity.listOfMessages.add(message)
+                    val notificationManager = NotificationManagerCompat.from(context)
+                    val myNotification = LearnNotificationActivity.buildMessageStyleNotification(context)
+                    //notify with the same message id to remove the old one
+                    notificationManager.notify(1, myNotification.build())
+                }
             }
         }
     }

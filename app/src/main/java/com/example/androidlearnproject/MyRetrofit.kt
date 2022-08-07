@@ -1,13 +1,11 @@
 package com.example.androidlearnproject
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import kotlinx.android.synthetic.main.activity_my_retrofit.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
+import com.example.androidlearnproject.databinding.ActivityMyRetrofitBinding
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import retrofit2.Retrofit
@@ -15,15 +13,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
 class MyRetrofit : AppCompatActivity() {
+    private lateinit var binding : ActivityMyRetrofitBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_my_retrofit)
+        binding = ActivityMyRetrofitBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl("https://e89385ae-5f61-4249-b3de-7c84d99d58c2.mock.pstmn.io/apis/")
             .build()
         val retrofitService = retrofit.create(MyRetroApi::class.java)
-        btn_call_api.setOnClickListener {
+        binding.btnCallApi.setOnClickListener {
             /* if the activity get destroyed this coroutine scope will be destroyed also because it is a lifecycleScope
             so if we want the scope to continue even if the activity is destroyed we can use :
             1 - GlobalScope Not recommended
